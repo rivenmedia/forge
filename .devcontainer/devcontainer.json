@@ -1,0 +1,6 @@
+{
+    "name": "Riven frontend",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+    "postCreateCommand": "bun i && bun dev",
+    "remoteUser": "root"
+}
