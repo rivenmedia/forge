@@ -492,7 +492,7 @@ export class ItemsService {
                     type: 'http'
                 }
             ],
-            url: '/api/v1/items{item_id}/streams/{stream_id}/unblacklist',
+            url: '/api/v1/items/{item_id}/streams/{stream_id}/unblacklist',
             ...options
         });
     }

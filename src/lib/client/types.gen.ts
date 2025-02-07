@@ -1339,7 +1339,7 @@ export type UnblacklistStreamApiV1ItemsItemIdStreamsStreamIdUnblacklistPostData 
         stream_id: number;
     };
     query?: never;
-    url: '/api/v1/items{item_id}/streams/{stream_id}/unblacklist';
+    url: '/api/v1/items/{item_id}/streams/{stream_id}/unblacklist';
 };
 
 export type UnblacklistStreamApiV1ItemsItemIdStreamsStreamIdUnblacklistPostErrors = {
