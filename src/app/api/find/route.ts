@@ -39,8 +39,20 @@ export async function GET(
         }
 
         const data = await response.json()
-        return NextResponse.json(data)
+        return NextResponse.json(data, {
+            headers: {
+                'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400'
+            }
+        })
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch external ID' }, { status: 500 })
+        return NextResponse.json(
+            { error: 'Failed to fetch external ID' },
+            {
+                status: 500,
+                headers: {
+                    'Cache-Control': 'public, max-age=60'
+                }
+            }
+        )
     }
 }
