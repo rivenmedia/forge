@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 import { TMDB_CONFIG } from '@/config/tmdb'
+import { dictToQueryString } from '@/lib/utils'
 import { MediaType } from '@/types'
-import { dictToQueryString } from '@/utils/helpers'
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ mediaType: MediaType }> }) {
     const { mediaType } = await params

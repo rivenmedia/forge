@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 import { TMDB_CONFIG } from '@/config/tmdb'
-import { dictToQueryString } from '@/utils/helpers'
+import { dictToQueryString } from '@/lib/utils'
 
 export async function GET(
     req: NextRequest,
