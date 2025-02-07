@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+import { TMDB_CONFIG } from '@/config/tmdb'
 import { MediaType } from '@/types'
-
-import { TMDB_CONFIG } from '../../../config/tmdb'
 
 export async function GET(
     req: NextRequest,
