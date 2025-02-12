@@ -1,13 +1,15 @@
-import pluginJs from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
+import pluginJs from '@eslint/js'
+import nextPlugin from '@next/eslint-plugin-next'
 
-import eslintConfigPrettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
-import pluginPromise from 'eslint-plugin-promise';
-import pluginReact from 'eslint-plugin-react';
-import tailwind from 'eslint-plugin-tailwindcss';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier'
+import importPlugin from 'eslint-plugin-import'
+import pluginPromise from 'eslint-plugin-promise'
+import pluginReact from 'eslint-plugin-react'
+// No support for Tailwind v4 yet. ETA: ~1 week
+// https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/325
+// import tailwind from 'eslint-plugin-tailwindcss'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default [
     {
@@ -33,7 +35,7 @@ export default [
     pluginReact.configs.flat.recommended, // https://github.com/jsx-eslint/eslint-plugin-react
     pluginReact.configs.flat['jsx-runtime'], // https://github.com/jsx-eslint/eslint-plugin-react
     eslintConfigPrettier, // https://github.com/prettier/eslint-config-prettier
-    ...tailwind.configs['flat/recommended'], // https://github.com/francoismassart/eslint-plugin-tailwindcss
+    // ...tailwind.configs['flat/recommended'], // https://github.com/francoismassart/eslint-plugin-tailwindcss
     {
         rules: {
             'no-unused-vars': 'off',
@@ -65,4 +67,4 @@ export default [
     {
         ignores: ['.next/*']
     }
-];
+]
