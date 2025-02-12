@@ -7,8 +7,9 @@ interface DashboardPageProps {
 }
 
 export default async function DashboardPage({ params }: DashboardPageProps) {
-    const slug = params.slug
+    const slug = params.slug?.join('/') || ''
     const pageDisplay = slug ? `/dashboard/${slug}` : '/dashboard'
+
     return (
         <div className='container py-4'>
             <Card className='text-center'>
