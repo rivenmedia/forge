@@ -11,7 +11,7 @@ export async function getAuthSecret() {
     const secret = await db.select().from(secrets).where(eq(secrets.key, 'auth_secret')).limit(1)
 
     if (secret.length === 0) {
-        const newSecret = crypto.randomBytes(32).toString('hex')
+        const newSecret = Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('hex')
         try {
             await db.insert(secrets).values({ key: 'auth_secret', value: newSecret })
         } catch (error) {
