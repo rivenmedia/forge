@@ -9,9 +9,7 @@
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-        "db:seed": "npx tsx lib/db/seed.ts",
-        "db:generate": "drizzle-kit generate",
-        "db:migrate": "drizzle-kit migrate",
+        "db:push": "drizzle-kit push",
         "db:studio": "drizzle-kit studio"
     },
     "dependencies": {
