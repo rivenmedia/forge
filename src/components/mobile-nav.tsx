@@ -74,6 +74,7 @@ interface MobileLinkProps extends LinkProps {
 
 function MobileLink({ href, onOpenChange, className, children, ...props }: MobileLinkProps) {
     const router = useRouter()
+
     return (
         <Link
             href={href}

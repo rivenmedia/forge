@@ -30,6 +30,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ sear
         }
 
         const data = await response.json()
+
         return NextResponse.json(data)
     } catch (error) {
         return NextResponse.json({ error: `Failed to fetch search results for ${searchType}` }, { status: 500 })
