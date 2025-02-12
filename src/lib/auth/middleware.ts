@@ -11,11 +11,11 @@ export type ActionState = {
     [key: string]: unknown // This allows for additional properties
 }
 
-// TODO: Replace <any, any> with proper types
+type SchemaType = z.ZodType<Record<string, unknown>>
 
-type ValidatedActionFunction<S extends z.ZodType<any, any>, T> = (data: z.infer<S>, formData: FormData) => Promise<T>
+type ValidatedActionFunction<S extends SchemaType, T> = (data: z.infer<S>, formData: FormData) => Promise<T>
 
-export function validatedAction<S extends z.ZodType<any, any>, T>(schema: S, action: ValidatedActionFunction<S, T>) {
+export function validatedAction<S extends SchemaType, T>(schema: S, action: ValidatedActionFunction<S, T>) {
     return async (prevState: ActionState, formData: FormData): Promise<T> => {
         const result = schema.safeParse(Object.fromEntries(formData))
         if (!result.success) {
@@ -26,13 +26,13 @@ export function validatedAction<S extends z.ZodType<any, any>, T>(schema: S, act
     }
 }
 
-type ValidatedActionWithUserFunction<S extends z.ZodType<any, any>, T> = (
+type ValidatedActionWithUserFunction<S extends SchemaType, T> = (
     data: z.infer<S>,
     formData: FormData,
     user: User
 ) => Promise<T>
 
-export function validatedActionWithUser<S extends z.ZodType<any, any>, T>(
+export function validatedActionWithUser<S extends SchemaType, T>(
     schema: S,
     action: ValidatedActionWithUserFunction<S, T>
 ) {
