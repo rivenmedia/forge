@@ -8,7 +8,11 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+        "db:seed": "npx tsx lib/db/seed.ts",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "db:studio": "drizzle-kit studio"
     },
     "dependencies": {
         "@radix-ui/react-checkbox": "^1.1.3",
