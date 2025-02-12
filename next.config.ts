@@ -11,7 +11,8 @@ const withBundleAnalyzer = initializeBundleAnalyzer({
 const nextConfig: NextConfig = {
     output: 'standalone',
     experimental: {
-        turbo: {}
+        turbo: {},
+        nodeMiddleware: true
     }
 }
 
