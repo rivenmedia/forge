@@ -7,7 +7,7 @@ import { ThemeProvider } from 'next-themes'
 
 import '@/app/globals.css'
 import { Header } from '@/components/header'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from '@/components/ui/sonner'
 import { siteConfig } from '@/config/site'
 import { UserProvider } from '@/lib/auth'
 import { getUser } from '@/lib/db/queries'
@@ -33,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             <body className={`${inter.className} bg-background text-foreground min-h-[100dvh] antialiased`}>
                 <ThemeProvider attribute='class'>
                     <UserProvider userPromise={userPromise}>{children}</UserProvider>
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

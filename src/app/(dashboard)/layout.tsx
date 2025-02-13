@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation'
 
 import { signOut } from '@/app/(login)/actions'
 import { Header } from '@/components/header'
-import { Toaster } from '@/components/ui/toaster'
 import { useUser } from '@/lib/auth'
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -24,7 +23,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div data-vaul-drawer-wrapper>
             <Header isAuthenticated={user} onSignOut={handleSignOut} />
             <main>{children}</main>
-            <Toaster />
         </div>
     )
 }
