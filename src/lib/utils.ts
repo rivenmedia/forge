@@ -1,13 +1,13 @@
 // lib/utils.ts
-import { type ClassValue, clsx } from 'clsx'
+import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs))
 }
 
 export function dictToQueryString(params: Record<string, string>): string {
-    const filteredParams = Object.fromEntries(Object.entries(params).filter(([_, v]) => v != null))
+  const filteredParams = Object.fromEntries(Object.entries(params).filter(([_, v]) => v != null))
 
-    return new URLSearchParams(filteredParams).toString()
+  return new URLSearchParams(filteredParams).toString()
 }
