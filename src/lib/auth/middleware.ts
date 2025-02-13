@@ -5,9 +5,12 @@ import { ClusterDataWithMembers, User } from '@/lib/db/schema'
 
 import { z } from 'zod'
 
+// TODO: Improve `ActionState` type. Not too happy with how it currently is.
 export type ActionState = {
     error?: string
     success?: string
+    email?: string
+    password?: string
     [key: string]: unknown // This allows for additional properties
 }
 

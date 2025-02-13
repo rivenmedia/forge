@@ -19,6 +19,6 @@ function Sidebar({ children }: SidebarProps) {
     )
 }
 
-export default function DashboardLayout({ ...props }: SidebarProps) {
-    return <Sidebar {...props} />
+export default function DashboardLayout({ children }: SidebarProps) {
+    return <Sidebar>{children}</Sidebar>
 }
