@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
     turbo: {},
     nodeMiddleware: true,
   },
+  images: {
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'image.tmdb.org',
+        }
+    ]
+  }
 }
 
 export default process.env.BUNDLE_ANALYZER_ENABLED === 'true' ? withBundleAnalyzer(nextConfig) : nextConfig

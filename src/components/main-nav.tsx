@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 
 import { navConfig, siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
+import { SearchDialog } from './search-dialog'
 
 export function MainNav() {
   const pathname = usePathname()
@@ -38,6 +39,9 @@ export function MainNav() {
               )
           )}
         </nav>
+        <div className='ml-4'>
+            <SearchDialog />
+        </div>
       </div>
     </>
   )
